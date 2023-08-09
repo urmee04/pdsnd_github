@@ -4,9 +4,9 @@ import pandas as pd
 import numpy as np
 
 # import data
-CITY_DATA = { 'chicago': r'C:\Users\nhnah\OneDrive\Desktop\bikeshare\data\chicago.csv',
-              'new york city': r'C:\Users\nhnah\OneDrive\Desktop\bikeshare\data\new_york_city.csv',
-              'washington': r'C:\Users\nhnah\OneDrive\Desktop\bikeshare\data\washington.csv'}
+CITY_DATA = {'chicago': 'chicago.csv',
+              'new york city': 'new_york_city.csv',
+              'washington': 'washington.csv'}
 
 # filters for city, month, and day
 def get_filters():
