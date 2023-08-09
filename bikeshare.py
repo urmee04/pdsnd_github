@@ -165,7 +165,7 @@ def user_stats(df):
     try:
         print('\nCounts of gender: \n',df['Gender'].value_counts())
     except:
-        print('\nSorry, Whasington has no "Gender" data available')
+        print('\nSorry, Washington has no "Gender" data available')
 
     # Display earliest, most recent, and most common year of birth
     # handling any error for any city's csv file having no Birth Year column
@@ -180,7 +180,7 @@ def user_stats(df):
       most_common_birth_year = int(df['Birth Year'].mode())
       print('\nMost Common Year:', most_common_birth_year)
     except Exception as ex:
-      print('\nSorry, Whasington has no "year of birth" informations')
+      print('\nSorry, Washington has no "year of birth" data available')
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
