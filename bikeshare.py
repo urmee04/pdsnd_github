@@ -185,6 +185,31 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
+def display_data(city):
+    """Show 5 records from the selected city.
+    """
+    df = pd.read_csv(CITY_DATA[city], index_col=[0])
+    answers = ['no','yes']
+    user_input = ''
+    i = 0
+    while user_input not in answers:
+        print('\nwould you like to view 5 rows of individual trip data? Enter yes or no\n')
+        user_input = input().lower()
+        if user_input == "yes":
+            print(df.head())
+        elif user_input not in answers:
+            print('\nPlease type: yes or no')
+
+    # Another loop to ask if the user wish to see more data
+    while user_input == 'yes':
+        print("\nDo you wish to continue?\n")
+        i += 5
+        user_input = input().lower()
+        if user_input == "yes":
+             print(df[i:i+5])
+        elif user_input != "yes":
+             break    
+
 
 def main():
     while True:
@@ -195,6 +220,7 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
+        display_data(city)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
